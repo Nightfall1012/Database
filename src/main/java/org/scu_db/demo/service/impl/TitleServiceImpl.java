@@ -10,8 +10,22 @@ import java.util.List;
 
 @Service(value = "TitleService")
 public class TitleServiceImpl implements TitleService {
+
     @Autowired
     private TitleRepository titleRepository;
 
+    @Override
+    public List<Title> findAllTitles() {
+        return titleRepository.findAll();
+    }
+/*
+    @Override
+    public Title findTitleByCallNumber(String callnumber) {
+        return titleRepository.findTitlesByCallNumber(callnumber);
+    }
 
+    @Override
+    public List<Title> findTitleByCallNumberUseSql(String callnumber) {
+        return titleRepository.findTitleByCallNumberUseSql(callnumber);
+    }*/
 }
